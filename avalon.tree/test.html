@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en"> 
+<head>
+    <title>无限级树控件</title>
+	<link href="http://www.bootcss.com/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div ms-widget="tree,$,$treeOption" ms-controller="tree">
+</div>
+<script src="http://www.bootcss.com/assets/js/jquery.js"></script>
+<script src="http://www.bootcss.com/assets/dist/js/bootstrap.min.js"></script>
+<script src="avalon.js"></script>
+<script>
+	require("avalon.tree", function() {
+		var tree = avalon.define('tree', function(vm) {
+			vm.$treeOption = {
+				url : "test.json?root=",
+				root : "F3FA5A1B426F8AEEB1D6A9F1DB10A2E2",
+				showName : "unitName",
+				showId : "unitId",
+				onselect : function(item){
+				}
+			}
+		});
+		var table = avalon.define('table', function(vm) {
+		});
+		avalon.scan();
+    });
+</script>
+</body>
+</html>
